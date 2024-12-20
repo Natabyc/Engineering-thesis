@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 from panos import firewall
 
 # connect with device - type in correct credentials
-fw = firewall.Firewall("10.74.1.17", "admin", "AdminXYZ123")
+fw = firewall.Firewall("10.74.1.17", "login", "password")
 
 #defining DoS Protection and DoS Profile parameters
 profile_name = "DoS_slowloris" #add suffix with attack name to know which protection is enabled
