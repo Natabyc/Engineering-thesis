@@ -1,7 +1,7 @@
 from panos import firewall
 
 # firstly connect with the device - type in the correct credentials
-fw = firewall.Firewall("10.74.1.16", "admin", "AdminXYZ123")
+fw = firewall.Firewall("10.74.1.16", "login", "password")
 
 
 #assigning interfaces
