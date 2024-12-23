@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 from panos import firewall
 
-# connect with device - type in correct credentials
+#connect with device - type in correct credentials
 fw = firewall.Firewall("10.74.1.17", "login", "password")
 
 #defining DoS zone parameters
@@ -88,6 +88,7 @@ xml_payload_zone = f'''
         <discard-overlapping-tcp-segment-mismatch>yes</discard-overlapping-tcp-segment-mismatch>
     </entry>
 '''
+#parameters below the flood tab were not changed as it was not part of the thesis
 
 #specify DoS Zone Protection location where the API request will apply the changes
 xpath_zone = f"/config/devices/entry[@name='localhost.localdomain']/network/profiles/zone-protection-profile"
