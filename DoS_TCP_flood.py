@@ -97,6 +97,9 @@ response_zone = fw.xapi.set(xpath=xpath_zone, element=xml_payload_zone)
 print(response_zone)
 
 response_str_zone = ET.tostring(response_zone, encoding="unicode")
+
+#to commit configuration
+#msg = fw.commit(cmd=True)
 print(" Detailed response DoS_zone XML:", response_str_zone)
 
 #option syn-cookies needs to be configured manually via GUI, as XML does not support it
