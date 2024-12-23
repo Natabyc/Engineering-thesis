@@ -101,3 +101,6 @@ print(" Detailed response DoS_zone XML:", response_str_zone)
 
 #option syn-cookies needs to be configured manually via GUI, as XML does not support it
 #It is crucial to add configured Zone Protection under correct Zone Protection field in the Zone tab using GUI.
+
+#to commit configuration
+#msg = fw.commit(cmd=True)
