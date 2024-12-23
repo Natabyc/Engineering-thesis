@@ -17,7 +17,6 @@ zone_from = 'WAN'
 zone_to = 'DMZ'
 
 #creating xml structure to add DoS Protection Profile
-#values of parameters need to be changed in xml structure, cannot be saved to variables (error "invalid")
 xml_payload = f'''
 <entry name="{profile_name}">
     <flood>
