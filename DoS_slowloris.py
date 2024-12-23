@@ -115,6 +115,8 @@ xpath_profile = f"/config/devices/entry[@name='localhost.localdomain']/vsys/entr
 response_profile = fw.xapi.set(xpath=xpath_profile, element=xml_payload_policy)
 print(response_profile)
 
+#to commit configuration
+#msg = fw.commit(cmd=True)
 response_str_profile = ET.tostring(response_profile, encoding="unicode")
 print("Detailed response DoS_policy XML:", response_str_profile)
 
