@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 from panos import firewall
 
-# connect with device - type in correct credentials
+#connect with device - type in correct credentials
 fw = firewall.Firewall("10.74.1.17", "login", "password")
 
 #defining DoS Protection and DoS Profile parameters
@@ -115,3 +115,8 @@ print(response_profile)
 
 response_str_profile = ET.tostring(response_profile, encoding="unicode")
 print("Detailed response DoS_policy XML:", response_str_profile)
+
+#commit configuration
+#msg = fw.commit(cmd=True)
+
+#option syn-cookies needs to be configured manually via GUI, as XML does not support it
