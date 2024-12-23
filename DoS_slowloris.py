@@ -1,7 +1,7 @@
 import xml.etree.ElementTree as ET
 from panos import firewall
 
-# connect with device - type in correct credentials
+#connect with device - type in correct credentials
 fw = firewall.Firewall("10.74.1.17", "login", "password")
 
 #defining DoS Protection and DoS Profile parameters
@@ -15,6 +15,7 @@ activate_rate = '1'
 maximal_rate = '1000'
 zone_from = 'WAN'
 zone_to = 'DMZ'
+max_con_sessions = '100'
 
 #creating xml structure to add DoS Protection Profile
 xml_payload = f'''
@@ -56,7 +57,7 @@ xml_payload = f'''
         <resource>
         <sessions>
         <enabled>yes</enabled>
-        <max-concurrent-limit>100</max-concurrent-limit>
+        <max-concurrent-limit>{max_con_sessions}</max-concurrent-limit>
         </sessions>
         </resource>
         <type>aggregate</type>  
@@ -116,3 +117,5 @@ print(response_profile)
 
 response_str_profile = ET.tostring(response_profile, encoding="unicode")
 print("Detailed response DoS_policy XML:", response_str_profile)
+
+#option syn-cookies needs to be configured manually via GUI, as XML does not support it
