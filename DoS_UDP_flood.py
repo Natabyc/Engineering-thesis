@@ -96,6 +96,8 @@ xpath_zone = f"/config/devices/entry[@name='localhost.localdomain']/network/prof
 response_zone = fw.xapi.set(xpath=xpath_zone, element=xml_payload_zone)
 print(response_zone)
 
+#to commit configuration
+#msg = fw.commit(cmd=True)
 response_str_zone = ET.tostring(response_zone, encoding="unicode")
 print(" Detailed response DoS_zone XML:", response_str_zone)
 
